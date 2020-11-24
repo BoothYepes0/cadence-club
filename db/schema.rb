@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2020_11_24_022528) do
 
   create_table "rides", force: :cascade do |t|
     t.integer "distance_km"
-    t.time "time"
+    t.integer "minutes"
     t.integer "user_id"
     t.string "description"
     t.date "date"
