@@ -20,8 +20,8 @@ class RidesController < ApplicationController
   def create
     the_ride = Ride.new
     the_ride.distance_km = params.fetch("query_distance_km")
-    the_ride.time = params.fetch("query_time")
-    the_ride.user_id = params.fetch("query_user_id")
+    the_ride.minutes = params.fetch("query_minutes")
+    the_ride.user_id = @current_user.id
     the_ride.description = params.fetch("query_description")
     the_ride.date = params.fetch("query_date")
 
@@ -38,7 +38,7 @@ class RidesController < ApplicationController
     the_ride = Ride.where({ :id => the_id }).at(0)
 
     the_ride.distance_km = params.fetch("query_distance_km")
-    the_ride.time = params.fetch("query_time")
+    the_ride.minutes = params.fetch("query_minutes")
     the_ride.user_id = params.fetch("query_user_id")
     the_ride.description = params.fetch("query_description")
     the_ride.date = params.fetch("query_date")
