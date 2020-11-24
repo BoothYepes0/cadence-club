@@ -3,6 +3,25 @@ Rails.application.routes.draw do
 
   
 
+  # Routes for the Ride resource:
+
+  # CREATE
+  post("/insert_ride", { :controller => "rides", :action => "create" })
+          
+  # READ
+  get("/rides", { :controller => "rides", :action => "index" })
+  
+  get("/rides/:path_id", { :controller => "rides", :action => "show" })
+  
+  # UPDATE
+  
+  post("/modify_ride/:path_id", { :controller => "rides", :action => "update" })
+  
+  # DELETE
+  get("/delete_ride/:path_id", { :controller => "rides", :action => "destroy" })
+
+  #------------------------------
+
   # Routes for the User account:
 
   # SIGN UP FORM

@@ -1,0 +1,131 @@
+<div>
+  <div>
+    <h1>
+      Ride #<%= @the_ride.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/rides">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_ride/<%= @the_ride.id %>">
+          Delete ride
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Distance km
+      </dt>
+      <dd>
+        <%= @the_ride.distance_km %>
+      </dd>
+
+      <dt>
+        Time
+      </dt>
+      <dd>
+        <%= @the_ride.time %>
+      </dd>
+
+      <dt>
+        User
+      </dt>
+      <dd>
+        <%= @the_ride.user_id %>
+      </dd>
+
+      <dt>
+        Description
+      </dt>
+      <dd>
+        <%= @the_ride.description %>
+      </dd>
+
+      <dt>
+        Date
+      </dt>
+      <dd>
+        <%= @the_ride.date %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_ride.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_ride.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit ride
+    </h2>
+
+    <form action="/modify_ride/<%= @the_ride.id %>"  method="post" >
+      <div>
+        <label for="distance_km_box">
+          Distance km
+        </label>
+
+        <input type="text" id="distance_km_box" name="query_distance_km" value="<%= @the_ride.distance_km %>">
+      </div>
+
+      <div>
+        <label for="time_box">
+          Time
+        </label>
+
+        <input type="time" id="time_box" name="query_time" value="<%= @the_ride.time %>">
+      </div>
+
+      <div>
+        <label for="user_id_box">
+          User
+        </label>
+
+        <input type="text" id="user_id_box" name="query_user_id" value="<%= @the_ride.user_id %>">
+      </div>
+
+      <div>
+        <label for="description_box">
+          Description
+        </label>
+
+        <input type="text" id="description_box" name="query_description" value="<%= @the_ride.description %>">
+      </div>
+
+      <div>
+        <label for="date_box">
+          Date
+        </label>
+
+        <input type="date" id="date_box" name="query_date" value="<%= @the_ride.date %>">
+      </div>
+
+      <button>
+        Update ride
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
