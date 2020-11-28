@@ -13,7 +13,7 @@
 #
 class Ride < ApplicationRecord
 #validations
-validates(:time, { :presence => true })
+validates(:minutes, { :presence => true })
 validates(:distance_km, { :length => { :minimum => 0, :maximum => 100000000 } })
 validates(:distance_km, { :presence => true })
 validates(:description, { :presence => true })

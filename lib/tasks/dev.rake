@@ -11,7 +11,6 @@ task({ :sample_data => :environment}) do
 #  updated_at      :datetime         not null
 
 require "faker"
-names = ["Pat", "Nico", "Jelani"]
 User.destroy_all
 20.times do |count|
     user = User.new
@@ -23,6 +22,26 @@ User.destroy_all
     user.save
 end
 
+#  id          :integer          not null, primary key
+#  date        :date
+#  description :string
+#  distance_km :integer
+#  minutes     :integer
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  user_id     :integer
+
+users = User.all
+Ride.destroy_all
+100.times do |count|
+    ride = Ride.new
+    ride.date = Faker::Date.between(from: '2020-07-01', to: '2020-11-24')
+    ride.description = Faker::Cannabis.brand
+    ride.distance_km = rand(10..200)
+    ride.minutes = ride.distance_km * 2
+    ride.user_id = users.sample.id
+    ride.save
+end
     
 
 

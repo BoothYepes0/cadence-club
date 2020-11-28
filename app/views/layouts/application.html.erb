@@ -16,6 +16,38 @@
   </head>
 
   <body>
+  <h1> Ride with Cadencia Cycling Club! </h1>
+
+<ul>
+        <% if @current_user == nil %>
+
+          <li>
+            <a href="/user_sign_up">Sign up</a>
+          </li>
+          
+          <li>
+            <a href="/user_sign_in">Sign in</a>
+          </li>
+        <% else%>
+
+          <li>
+            <a href="/user_sign_out">Sign out</a>
+          </li>
+          
+          <li>
+            <a href="/edit_user_profile">Edit profile</a>
+          </li>
+          
+        <% end %>
+          <li>
+            <a href="/rides">Rides</a>
+          </li>
+
+          <li>
+            <a href="/users">Users</a>
+          </li>
+    </ul>
+
     <%= yield %>
   </body>
 </html>
