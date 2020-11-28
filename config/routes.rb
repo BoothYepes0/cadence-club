@@ -42,6 +42,10 @@ Rails.application.routes.draw do
 
   get("/users", { :controller => "user_authentication", :action => "show" })
 
+  #SHOW DETAILS OF ONE PARTICULAR USER
+
+  get("/users/:path_id", { :controller => "user_authentication", :action => "show_user_profile" })
+
   # ------------------------------
 
   # SIGN IN FORM

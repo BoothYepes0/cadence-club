@@ -93,6 +93,13 @@ class UserAuthenticationController < ApplicationController
     render({ :template => "user_authentication/show_users.html.erb" })
   end
  
+  #get("/users/:path_id", { :controller => "rides", :action => "show_user_profile" })
+
+  def show_user_profile
+    
+    render({ :template => "user_authentication/show_user_profile.html.erb" })
+  
+  end
 
 
 
