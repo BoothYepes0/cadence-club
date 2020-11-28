@@ -30,7 +30,7 @@
         Time
       </dt>
       <dd>
-        <%= @the_ride.time %>
+        <%= @the_ride.minutes %>
       </dd>
 
       <dt>
@@ -94,7 +94,7 @@
           Time
         </label>
 
-        <input type="time" id="time_box" name="query_time" value="<%= @the_ride.time %>">
+        <input type="text" id="time_box" name="query_minutes" value="<%= @the_ride.minutes %>">
       </div>
 
       <div>
