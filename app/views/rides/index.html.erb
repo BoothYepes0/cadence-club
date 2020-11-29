@@ -115,7 +115,8 @@
 
         <td>
           <% hours_ridden = a_ride.minutes / 60.0 %>
-          <%= a_ride.distance_km / hours_ridden %>
+          <% speed = a_ride.distance_km / hours_ridden %>
+          <%= speed.round(1) %>
         </td>
 
         <td>
