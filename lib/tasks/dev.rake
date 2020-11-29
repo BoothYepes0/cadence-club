@@ -37,8 +37,8 @@ Ride.destroy_all
     ride = Ride.new
     ride.date = Faker::Date.between(from: '2020-07-01', to: '2020-11-24')
     ride.description = Faker::Cannabis.brand
-    ride.distance_km = rand(10..120)
-    ride.minutes = ride.distance_km * 2 * rand(0.8..1.2)
+    ride.distance_km = rand(10.0..120.0) * 1.111111
+    ride.minutes = ride.distance_km * 2.0 * rand(0.8..1.2)
     ride.user_id = users.sample.id
     ride.save
 end

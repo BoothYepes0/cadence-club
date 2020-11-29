@@ -25,7 +25,4 @@ class User < ApplicationRecord
   #direct associations - allows you do write [user].rides to show all rides
   has_many(:rides, { :class_name => "Ride", :foreign_key => "user_id", :dependent => :destroy })
 
-
-
-
 end
