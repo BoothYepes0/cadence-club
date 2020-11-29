@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-
   # Home Page
   get("/", { :controller => "homepage", :action => "index" })
 
