@@ -92,11 +92,16 @@ class UserAuthenticationController < ApplicationController
 
     render({ :template => "user_authentication/show_users.html.erb" })
   end
- 
-  #get("/users/:path_id", { :controller => "rides", :action => "show_user_profile" })
+   
+  #get("/users/:path_id", { :controller => "user_authentication", :action => "show_user_profile" })
 
   def show_user_profile
-    
+    the_id = params.fetch("path_id")
+
+    matching_users = User.where( :id => the_id )
+
+    @the_user = matching_users.at(0)
+
     render({ :template => "user_authentication/show_user_profile.html.erb" })
   
   end
