@@ -68,7 +68,11 @@
         </th>
 
         <th>
-          Time
+          Minutes Ridden
+        </th>
+
+        <th>
+          Speed (KPH)
         </th>
 
         <th>
@@ -107,6 +111,11 @@
 
         <td>
           <%= a_ride.minutes %>
+        </td>
+
+        <td>
+          <% hours_ridden = a_ride.minutes / 60.0 %>
+          <%= a_ride.distance_km / hours_ridden %>
         </td>
 
         <td>
