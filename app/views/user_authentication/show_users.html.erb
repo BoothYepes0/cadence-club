@@ -12,7 +12,7 @@ If you see this it is working!
 <hr>
 <div>
   <div>
-    <table>
+    <table border="1">
       <tr>
         <th>
           Name
@@ -36,7 +36,7 @@ If you see this it is working!
       <% @list_of_users.each do |a_user| %>
       <tr>
         <td>
-          <%= a_user.first_name + a_user.last_name %>
+          <%= a_user.first_name + " " + a_user.last_name %>
         </td>
 
         <td>
