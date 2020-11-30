@@ -1,39 +1,39 @@
-<div >
+<div class="container">
   <h5>
     Edit User Account
   </h5>
 
-  <div>
+  <div class="container">
     <form action="/modify_user" method="post">
-      <div>
+      <div class="form-group">
         <label for="email_box">Email</label>
-        <input id="email_box" name="query_email" value="<%= @current_user.email %>">
+        <input id="email_box" class="form-control" name="query_email" value="<%= @current_user.email %>">
       </div>
-      <div>
+      <div class="form-group">
         <label for="first_name_box">First name</label>
-        <input id="first_name_box" name="query_first_name" value="<%= @current_user.first_name %>">
+        <input id="first_name_box" class="form-control" name="query_first_name" value="<%= @current_user.first_name %>">
       </div>
-      <div>
+      <div class="form-group">
         <label for="last_name_box">Last name</label>
-        <input id="last_name_box" name="query_last_name" value="<%= @current_user.last_name %>">
+        <input id="last_name_box" class="form-control" name="query_last_name" value="<%= @current_user.last_name %>">
       </div>
-      <div>
+      <div class="form-group">
         <label for="username_box">Username</label>
-        <input id="username_box" name="query_username" value="<%= @current_user.username %>">
+        <input id="username_box" class="form-control" name="query_username" value="<%= @current_user.username %>">
       </div>
 
-      <div>
+      <div class="form-group">
         <label for="password_box">Password</label>
-        <input id="password_box" name="query_password" placeholder="Choose a password..." type="password">
+        <input id="password_box" class="form-control" name="query_password" placeholder="Choose a password..." type="password">
       </div>
     
-      <div>
+      <div class="form-group">
         <label for="password_confirmation_box">Password Confirmation</label>
-        <input id="password_confirmation_box" name="query_password_confirmation" placeholder="Confirm your password..." type="password">
+        <input id="password_confirmation_box" class="form-control" name="query_password_confirmation" placeholder="Confirm your password..." type="password">
       </div>
 
-      <button>
-        Update account
+      <button
+       type="button" class="btn btn-success"> Update account
       </button>
     </form>
   </div>
