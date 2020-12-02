@@ -1,7 +1,7 @@
 <div>
   <div>
     <h1>
-      Ride #<%= @the_ride.id %> details
+      <%= @the_ride.description %> ride details
     </h1>
 
     <div>
@@ -19,6 +19,16 @@
     </div>
 
     <dl>
+
+<dt>
+        Rider username
+      </dt>
+        <dd>
+          <% matching_riders = User.where({ :id => @the_ride.user_id }) %> 
+          <% the_rider = matching_riders.at(0) %>
+          <%= the_rider.username %>
+        </dd>
+
       <dt>
         Distance km
       </dt>
@@ -34,37 +44,30 @@
       </dd>
 
       <dt>
-        User
+        Speed
       </dt>
       <dd>
-        <%= @the_ride.user_id %>
-        <% @the_ride.user_id %>
-
+         <% hours_ridden = @the_ride.minutes / 60.0 %>
+          <% speed = @the_ride.distance_km / hours_ridden %>
+          <%= speed.round(1)  %> kilometers per hour
       </dd>
 
       <dt>
-        Description
-      </dt>
-      <dd>
-        <%= @the_ride.description %>
-      </dd>
-
-      <dt>
-        Date
+        Date of ride
       </dt>
       <dd>
         <%= @the_ride.date %>
       </dd>
 
       <dt>
-        Created at
+        Ride uploaded
       </dt>
       <dd>
         <%= time_ago_in_words(@the_ride.created_at) %> ago
       </dd>
 
       <dt>
-        Updated at
+        Ride updated
       </dt>
       <dd>
         <%= time_ago_in_words(@the_ride.updated_at) %> ago
