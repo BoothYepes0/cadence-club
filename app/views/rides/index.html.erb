@@ -63,6 +63,9 @@
         <th>
           Created at
         </th>
+        <th>
+          Username
+        </th>
 
         <th>
           Description
@@ -79,10 +82,6 @@
 
         <th>
           Speed (KPH)
-        </th>
-
-        <th>
-          [User]
         </th>
 
         <th>
@@ -103,7 +102,11 @@
         <td>
           <%= time_ago_in_words(a_ride.created_at) %> ago
         </td>
-
+        <td>
+          <% matching_riders = User.where({ :id => a_ride.user_id }) %> 
+          <% the_rider = matching_riders.at(0) %>
+          <%= the_rider.username %>        
+        </td>
 
         <td>
           <%= a_ride.description %>
@@ -121,11 +124,6 @@
           <% hours_ridden = a_ride.minutes / 60.0 %>
           <% speed = a_ride.distance_km / hours_ridden %>
           <%= speed.round(1) %>
-        </td>
-
-        <td>
-          <%= a_ride.user_id %>
-          <%= "hello mom" %>
         </td>
 
         <td>

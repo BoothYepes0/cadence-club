@@ -12,7 +12,7 @@ task({ :sample_data => :environment}) do
 
 require "faker"
 User.destroy_all
-20.times do |count|
+100.times do |count|
     user = User.new
     user.first_name = Faker::Name.first_name
     user.username = user.first_name + count.to_s
@@ -33,7 +33,7 @@ end
 
 users = User.all
 Ride.destroy_all
-300.times do |count|
+1000.times do |count|
     ride = Ride.new
     ride.date = Faker::Date.between(from: '2020-07-01', to: '2020-11-24')
     ride.description = Faker::Cannabis.brand
