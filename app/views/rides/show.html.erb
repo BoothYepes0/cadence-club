@@ -11,14 +11,17 @@
         </a>
       </div>
 
+<% if @current_user.id == @the_ride.user_id %>
       <div>
         <a href="/delete_ride/<%= @the_ride.id %>">
           Delete ride
         </a>
       </div>
     </div>
-
     <dl>
+<% else %>
+<% end %>
+
 
 <dt>
         Rider username
@@ -78,6 +81,7 @@
 
 <hr>
 
+<% if @current_user.id == @the_ride.user_id %>
 
 <div>
   <div>
@@ -103,14 +107,6 @@
       </div>
 
       <div>
-        <label for="user_id_box">
-          User
-        </label>
-
-        <input type="text" id="user_id_box" name="query_user_id" value="<%= @the_ride.user_id %>">
-      </div>
-
-      <div>
         <label for="description_box">
           Description
         </label>
@@ -132,5 +128,9 @@
     </form>
   </div>
 </div>
+
+<% else %>
+
+<% end %>
 
 <hr>
