@@ -61,8 +61,13 @@
     <thead class="thead-dark">
       <tr>
         <th>
-          ID
+          Created at
         </th>
+
+        <th>
+          Description
+        </th>
+
 
         <th>
           Distance km
@@ -77,19 +82,11 @@
         </th>
 
         <th>
-          User
-        </th>
-
-        <th>
-          Description
+          [User]
         </th>
 
         <th>
           Date
-        </th>
-
-        <th>
-          Created at
         </th>
 
         <th>
@@ -102,8 +99,14 @@
 
       <% @list_of_rides.each do |a_ride| %>
       <tr>
+
         <td>
-          <%= a_ride.id %>
+          <%= time_ago_in_words(a_ride.created_at) %> ago
+        </td>
+
+
+        <td>
+          <%= a_ride.description %>
         </td>
 
         <td>
@@ -122,19 +125,13 @@
 
         <td>
           <%= a_ride.user_id %>
-        </td>
-
-        <td>
-          <%= a_ride.description %>
+          <%= "hello mom" %>
         </td>
 
         <td>
           <%= a_ride.date %>
         </td>
 
-        <td>
-          <%= time_ago_in_words(a_ride.created_at) %> ago
-        </td>
         <td>
           <%= time_ago_in_words(a_ride.updated_at) %> ago
         </td>
