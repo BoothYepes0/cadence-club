@@ -14,37 +14,43 @@
   </head>
   <body>
     <h1> Ride with Cadencia Cycling Club! </h1>
-    <ul>
-      <% if @current_user == nil %>
-        <li>
-          <button type="button" class="btn btn-link">
-            <a href="/user_sign_up">Sign up</a>
-          </li>
-          <li>
-            <button type="button" class="btn btn-link">
-              <a href="/user_sign_in">Sign in</a>
-            </li>
-          <% else%>           
-            <li>
-              <button type="button" class="btn btn-link">
-                <a href="/user_sign_out">Sign out</a>
-              </button>
-            </li>
-            <li>
-              <button type="button" class="btn btn-link">
-              <a href="/edit_user_profile">Edit profile</a>
-            </li>
-          
-          <li>
-            <button type="button" class="btn btn-link">
-              <a href="/rides">Rides</a>
-            </li>
-            <li>
-              <button type="button" class="btn btn-link">
-                <a href="/users">Users</a>
-              </li>
-          <% end %>
-            </ul>
+   
+<%####%>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="/">CCC Home</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <% if @current_user == nil %>    
+      <li class="nav-item active">
+        <a class="nav-link" href="/user_sign_up">Sign up <span class="sr-only">(current)</span></a>
+      </li>
+
+      <li class="nav-item active">
+        <a class="nav-link" href="/user_sign_in">Sign in <span class="sr-only">(current)</span></a>
+      </li>
+      <% else%>      
+      <li class="nav-item active">
+        <a class="nav-link" href="/user_sign_out">Sign out <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/edit_user_profile">Edit profile <span class="sr-only">(current)</span></a>
+      </li>     
+      <li class="nav-item active">
+        <a class="nav-link" href="/rides">Rides</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/users">Users</a>
+      </li>
+      <% end %>
+      </li>
+    </ul>
+  </div>
+</nav>
+<%####%> 
+ 
             <%= yield %>
            
            <div class="container"> 

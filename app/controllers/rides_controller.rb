@@ -39,7 +39,7 @@ class RidesController < ApplicationController
 
     the_ride.distance_km = params.fetch("query_distance_km")
     the_ride.minutes = params.fetch("query_minutes")
-    the_ride.user_id = params.fetch("query_user_id")
+    #the_ride.user_id = params.fetch("query_user_id")
     the_ride.description = params.fetch("query_description")
     the_ride.date = params.fetch("query_date")
 
