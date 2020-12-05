@@ -33,10 +33,10 @@ end
 
 users = User.all
 Ride.destroy_all
-1000.times do |count|
+1001.times do |count|
     ride = Ride.new
     ride.date = Faker::Date.between(from: '2020-07-01', to: '2020-11-24')
-    ride.description = Faker::Cannabis.brand
+    ride.description = Faker::Ancient.hero
     ride.distance_km = rand(10.0..120.0) * 1.111111
     ride.minutes = ride.distance_km * 2.0 * rand(0.8..1.2)
     ride.user_id = users.sample.id
