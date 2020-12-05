@@ -102,7 +102,7 @@
 
 
         <td>
-          <%= a_ride.date %>
+          <%= a_ride.date.strftime("%B %d, %Y") %>
         </td>      
         <td>
           <% matching_riders = User.where({ :id => a_ride.user_id }) %> 
